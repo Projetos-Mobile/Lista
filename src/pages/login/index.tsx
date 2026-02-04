@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, Alert, ActivityIndicator  } from "react-native";
-import {MaterialIcons} from '@expo/vector-icons';
 import { style } from "./styles";
 import Logo from "../../assets/nike.png";
 import { themes } from "../../global/themes";
+import { Input } from "../../components/input";
+import { MaterialIcons, Octicons } from "@expo/vector-icons";
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(true);
     const [loading, setLoading] = useState(false);
+
 
     async function getLogin(){
         try{
@@ -47,36 +50,24 @@ export default function Login() {
                 <Text style={style.text}>Seja Bem-Vindo à Nike!</Text>
             </View>
             <View style={style.boxMiddle}>
-                <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
-                <View style={style.boxInput}>
-                    <TextInput
-                        style={style.input}
-                        value={email}
-                        onChangeText={setEmail}
-                        placeholder="Digite seu e-mail"
+                <Input
+                    value={email}
+                    onChangeText={setEmail}
+                    title="ENDEREÇO DE E-MAIL"
+                    IconRight={MaterialIcons}
+                    IconRightName="email"
+                />
 
-                    />
-                    <MaterialIcons 
-                    name="email" 
-                    size={30}
-                    color={themes.colors.gray}
-                    />
-                </View>
-            
-                <Text style={style.titleInput}>SENHA</Text>
-                <View style={style.boxInput}>
-                    <TextInput
-                        style={style.input}
-                        value={password}
-                        onChangeText={setPassword}
-                        placeholder="Digite sua senha"
-                    />
-                    <MaterialIcons 
-                    name="lock" 
-                    size={30} 
-                    color={themes.colors.gray}
-                    />
-                </View>
+                <Input
+                    value={password}
+                    onChangeText={setPassword}
+                    title="SENHA"
+                    IconRight={Octicons}
+                    IconRightName={showPassword ?"eye-closed":"eye"}
+                    secureTextEntry={showPassword}
+                    onIconRightPress={() => setShowPassword(!showPassword)}
+                />
+                
             </View>
             <View style={style.boxBottom}>
                 <TouchableOpacity style={style.button} onPress={()=>getLogin()}>

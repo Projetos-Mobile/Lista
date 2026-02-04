@@ -32,28 +32,6 @@ export const style = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 25,
     },
-    titleInput:{
-        paddingBottom: 10,
-        marginLeft: 5,
-        marginTop: 20,
-        fontWeight: "bold",
-        color:themes.colors.gray,
-    },
-    boxInput:{
-        width: '100%',
-        height: 40,
-        borderWidth: 1, 
-        borderRadius: 4,
-        flexDirection: "row",
-        alignItems: "center",
-        paddingHorizontal: 5,
-    },
-    input:{
-        height: '100%',
-        width: '90%',
-        borderRadius: 4,
-        paddingLeft: 10,
-    },
     button:{
         width: '100%',
         height: 40,
