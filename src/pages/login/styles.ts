@@ -6,7 +6,7 @@ export const style = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#fff",
+        backgroundColor: "#ffffff",
     },
     boxTop: {
         height:Dimensions.get('window').height / 3,
@@ -25,7 +25,7 @@ export const style = StyleSheet.create({
         paddingHorizontal: 37,  
     },
     imagem: {
-        width: 400,
+        width: 200,
         height: 160,
     },
     text:{

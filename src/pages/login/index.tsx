@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, Alert, ActivityIndicator  } from "react-native";
 import { style } from "./styles";
-import Logo from "../../assets/nike.png";
+import Logo from "../../assets/logo.png";
 import { themes } from "../../global/themes";
 import { Input } from "../../components/input";
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
@@ -48,7 +48,7 @@ export default function Login() {
                 style={style.imagem} 
                 resizeMode="contain"
                 />
-                <Text style={style.text}>Seja Bem-Vindo à Nike!</Text>
+                <Text style={style.text}>Seja Bem-Vindo ao myList!</Text>
             </View>
             <View style={style.boxMiddle}>
                 <Input
