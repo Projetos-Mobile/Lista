@@ -5,6 +5,7 @@ import Logo from "../../assets/nike.png";
 import { themes } from "../../global/themes";
 import { Input } from "../../components/input";
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
+import { Button } from "../../components/button";
 
 export default function Login() {
 
@@ -70,15 +71,7 @@ export default function Login() {
                 
             </View>
             <View style={style.boxBottom}>
-                <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
-                    {
-                    loading ? 
-                    <ActivityIndicator color={"white"} size={"small"}/>
-                    :
-                    <Text style={style.buttonText}>Entrar</Text> 
-                    }
-                            
-                </TouchableOpacity>
+                <Button text="ENTRAR" loading={loading} onPress={getLogin}/>
                 <Text style={style.esqueceu}>Esqueceu sua senha?</Text>
             </View>
             <Text style={style.crie}>Não tem uma conta? <Text style={style.crieLink}>Crie agora!</Text></Text>
